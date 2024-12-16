@@ -2,8 +2,13 @@ import React from 'react'
 import CoreConcept from './CoreConcept'
 import componentsImg from "/src/assets/components.png";
 import { CORE_CONCEPTS } from '../data.js';
+import TabButton from './TabButton.jsx';
 
 const Main = () => {
+
+  function handleSelect(){
+    console.log("Hello Select");
+  }
   return (
     <div>
       <main>
@@ -28,6 +33,15 @@ const Main = () => {
               image={CORE_CONCEPTS[3].image}
             />
           </ul>
+        </section>
+        <section id="examples">
+          <h2>Examples</h2>
+          <menu>
+            <TabButton onSelect = {handleSelect}>Components</TabButton>
+            <TabButton onSelect = {handleSelect}>JSX</TabButton>
+            <TabButton onSelect = {handleSelect}>Props</TabButton>
+            <TabButton onSelect = {handleSelect}>State</TabButton>
+          </menu>
         </section>
       </main>
     </div>
